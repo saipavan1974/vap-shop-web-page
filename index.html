@@ -85,6 +85,7 @@
             align-items: center;
             position: relative;
             color: white;
+            text-align: center;
         }
         
         .hero::before {
@@ -100,17 +101,21 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 600px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .btn {
@@ -292,6 +297,100 @@
             display: none;
         }
         
+        /* New Payment Page Styles */
+        .payment-page {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: var(--dark);
+        }
+
+        .payment-page h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-method:hover {
+            border-color: var(--primary);
+        }
+
+        .payment-method.active {
+            border-color: var(--primary);
+            background-color: rgba(74, 44, 130, 0.05);
+        }
+
+        .payment-method input {
+            margin-right: 1rem;
+        }
+
+        .payment-method i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary);
+        }
+
+        .payment-details {
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .card-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .card-icons img {
+            height: 30px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .back-to-order {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-to-order:hover {
+            text-decoration: underline;
+        }
+        
         .order-confirmation {
             text-align: center;
             padding: 2rem;
@@ -374,6 +473,11 @@
             
             .hero h1 {
                 font-size: 2.5rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
             }
         }
     </style>
@@ -609,8 +713,66 @@
                         <label for="ageVerify">I confirm I am 18+ years old</label>
                     </div>
                     
-                    <button type="submit" class="btn" style="width: 100%;">Place Order</button>
+                    <button type="submit" class="btn" style="width: 100%;">Proceed to Payment</button>
                 </form>
+                
+                <!-- New Payment Page -->
+                <div id="paymentPage" class="payment-page hidden">
+                    <h2>Payment Details</h2>
+                    
+                    <div class="payment-methods">
+                        <label class="payment-method active" for="cardPayment">
+                            <input type="radio" id="cardPayment" name="paymentType" value="card" checked>
+                            <i class="far fa-credit-card"></i>
+                            <span>Credit/Debit Card</span>
+                        </label>
+                        
+                        <label class="payment-method" for="paypalPayment">
+                            <input type="radio" id="paypalPayment" name="paymentType" value="paypal">
+                            <i class="fab fa-paypal"></i>
+                            <span>PayPal</span>
+                        </label>
+                    </div>
+                    
+                    <div id="cardDetails" class="payment-details active">
+                        <div class="card-icons">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardName">Name on Card</label>
+                            <input type="text" id="cardName" placeholder="John Smith" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123" required>
+                            </div>
+                        </div>
+                        
+                        <button id="processPayment" class="btn" style="width: 100%;">Complete Payment</button>
+                    </div>
+                    
+                    <div id="paypalDetails" class="payment-details">
+                        <p>You will be redirected to PayPal to complete your payment.</p>
+                        <button id="processPaypal" class="btn" style="width: 100%;">Continue to PayPal</button>
+                    </div>
+                    
+                    <a href="#" id="backToOrder" class="back-to-order">← Back to order details</a>
+                </div>
                 
                 <div id="orderConfirmation" class="order-confirmation hidden">
                     <i class="fas fa-check-circle"></i>
@@ -642,7 +804,7 @@
             
             <div class="contact-info">
                 <p>Email: orders@vapehubuk.com</p>
-                <p>Phone: </p>
+                <p>Phone: 020 1234 5678</p>
             </div>
             
             <p class="copyright">
@@ -716,16 +878,96 @@
             orderTotal.textContent = `£${total.toFixed(2)}`;
         }
         
-        // Handle form submission
+        // Handle form submission - now goes to payment page
         document.getElementById('vapeOrderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Validate basic form
+            if (!document.getElementById('name').value || 
+                !document.getElementById('email').value || 
+                !document.getElementById('phone').value || 
+                !document.getElementById('address').value) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if (!document.getElementById('ageVerify').checked) {
+                alert('You must confirm you are 18+ years old');
+                return;
+            }
+            
+            // Hide order form, show payment page
+            document.getElementById('vapeOrderForm').classList.add('hidden');
+            document.getElementById('paymentPage').classList.remove('hidden');
+        });
+        
+        // Payment method selection
+        document.querySelectorAll('input[name="paymentType"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Hide all payment details
+                document.querySelectorAll('.payment-details').forEach(detail => {
+                    detail.classList.remove('active');
+                });
+                
+                // Show selected payment details
+                const selectedMethod = this.value;
+                document.getElementById(selectedMethod + 'Details').classList.add('active');
+            });
+        });
+        
+        // Back to order button
+        document.getElementById('backToOrder').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('paymentPage').classList.add('hidden');
+            document.getElementById('vapeOrderForm').classList.remove('hidden');
+        });
+        
+        // Process payment button
+        document.getElementById('processPayment').addEventListener('click', function() {
+            // Validate card details
+            const cardNumber = document.getElementById('cardNumber').value;
+            const cardName = document.getElementById('cardName').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+            
+            if (!cardNumber || !cardName || !expiryDate || !cvv) {
+                alert('Please fill in all card details');
+                return;
+            }
+            
+            // Simple validation for demo purposes
+            if (!/^\d{16}$/.test(cardNumber.replace(/\s/g, ''))) {
+                alert('Please enter a valid 16-digit card number');
+                return;
+            }
+            
+            if (!/^\d{3,4}$/.test(cvv)) {
+                alert('Please enter a valid CVV (3 or 4 digits)');
+                return;
+            }
+            
+            if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
+                alert('Please enter expiry date in MM/YY format');
+                return;
+            }
+            
+            // Process payment (simulated)
+            processOrder('card');
+        });
+        
+        // Process PayPal button
+        document.getElementById('processPaypal').addEventListener('click', function() {
+            // In a real app, this would redirect to PayPal
+            processOrder('paypal');
+        });
+        
+        // Function to process the order after payment
+        function processOrder(paymentMethod) {
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const address = document.getElementById('address').value;
-            const payment = document.getElementById('payment').value;
             const notes = document.getElementById('notes').value;
             
             // Calculate total
@@ -734,7 +976,7 @@
             // Create order object
             const order = {
                 customer: { name, email, phone, address },
-                payment,
+                payment: paymentMethod,
                 notes,
                 items: [...cart],
                 total,
@@ -745,19 +987,16 @@
             // Store in session storage
             sessionStorage.setItem('vapeOrder', JSON.stringify(order));
             
-            // Show confirmation
+            // Hide payment page, show confirmation
+            document.getElementById('paymentPage').classList.add('hidden');
             showOrderConfirmation(order);
             
             // Clear cart
             cart = [];
-        });
+        }
         
         // Show order confirmation
         function showOrderConfirmation(order) {
-            // Hide form, show confirmation
-            document.getElementById('vapeOrderForm').classList.add('hidden');
-            document.getElementById('orderConfirmation').classList.remove('hidden');
-            
             // Build confirmation details
             let detailsHTML = `
                 <p><strong>Order #:</strong> ${order.orderId}</p>
@@ -787,12 +1026,15 @@
             }
             
             document.getElementById('confirmationDetails').innerHTML = detailsHTML;
+            
+            // Show confirmation
+            document.getElementById('orderConfirmation').classList.remove('hidden');
         }
         
         // New order button
         document.getElementById('newOrderBtn').addEventListener('click', function() {
-            document.getElementById('vapeOrderForm').classList.remove('hidden');
             document.getElementById('orderConfirmation').classList.add('hidden');
+            document.getElementById('vapeOrderForm').classList.remove('hidden');
             document.getElementById('vapeOrderForm').reset();
             updateOrderSummary();
         });
@@ -803,6 +1045,7 @@
             
             if (savedOrder) {
                 const order = JSON.parse(savedOrder);
+                document.getElementById('vapeOrderForm').classList.add('hidden');
                 showOrderConfirmation(order);
             }
         });
