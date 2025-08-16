@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud9 Vapes | Premium Smoking Vaporizers</title>
+    <title>VapeHub UK | Premium Vaping Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -153,10 +153,23 @@
             margin: 0 auto;
         }
         
+        .product-categories {
+            margin-bottom: 3rem;
+        }
+        
+        .product-categories h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
         
         .product-card {
@@ -367,8 +380,8 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <i class="fas fa-cloud"></i>
-                <span>Cloud9 Vapes</span>
+                <i class="fas fa-smoking"></i>
+                <span>VapeHub UK</span>
             </div>
             <nav>
                 <ul>
@@ -382,8 +395,8 @@
     
     <section class="hero">
         <div class="container hero-content">
-            <h1>Premium Vaping Experience</h1>
-            <p>Discover our collection of high-quality vaporizers for the ultimate smoking experience. Smooth hits, rich flavors, and exceptional craftsmanship.</p>
+            <h1>Premium Vaping Products</h1>
+            <p>UK's leading supplier of high-quality vaping devices, e-liquids, and accessories at competitive prices.</p>
             <a href="#order" class="btn">Order Now</a>
         </div>
     </section>
@@ -391,44 +404,143 @@
     <section class="products" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>Our Premium Collection</h2>
-                <p>Choose from our selection of top-rated vaporizers, each designed to deliver exceptional performance and flavor.</p>
+                <h2>Our Vape Collection</h2>
+                <p>Explore our wide range of premium vaping products with UK prices.</p>
             </div>
             
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec" alt="Vaporizer Pro X">
+            <div class="product-categories">
+                <h3>Vape Pens</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec" alt="Standard Vape Pen">
+                        </div>
+                        <div class="product-info">
+                            <h3>Standard Vape Pen</h3>
+                            <div class="price">£19.99</div>
+                            <p class="description">Beginner-friendly vape pen with decent battery life.</p>
+                            <button class="btn add-to-cart" data-product="Standard Vape Pen" data-price="19.99">Add to Order</button>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Vaporizer Pro X</h3>
-                        <div class="price">$149.99</div>
-                        <p class="description">Our flagship model with temperature control, long battery life, and premium vapor production.</p>
-                        <button class="btn add-to-cart" data-product="Vaporizer Pro X" data-price="149.99">Add to Order</button>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1581691852281-009b52c1c897" alt="Premium Vape Pen">
+                        </div>
+                        <div class="product-info">
+                            <h3>Premium Vape Pen</h3>
+                            <div class="price">£34.99</div>
+                            <p class="description">Advanced pen with adjustable voltage settings.</p>
+                            <button class="btn add-to-cart" data-product="Premium Vape Pen" data-price="34.99">Add to Order</button>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1581691852281-009b52c1c897" alt="Cloud Chaser Mini">
+                <h3>Pod Systems</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1600423115367-87ea766168db" alt="SMOK Novo Eco Pod Kit">
+                        </div>
+                        <div class="product-info">
+                            <h3>SMOK Novo Eco Pod Kit</h3>
+                            <div class="price">£24.99</div>
+                            <p class="description">Compact and eco-friendly pod system.</p>
+                            <button class="btn add-to-cart" data-product="SMOK Novo Eco Pod Kit" data-price="24.99">Add to Order</button>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Cloud Chaser Mini</h3>
-                        <div class="price">$99.99</div>
-                        <p class="description">Compact size with powerful performance. Perfect for vaping on the go.</p>
-                        <button class="btn add-to-cart" data-product="Cloud Chaser Mini" data-price="99.99">Add to Order</button>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Iron Pod Device">
+                        </div>
+                        <div class="product-info">
+                            <h3>Iron Pod Device</h3>
+                            <div class="price">£29.99</div>
+                            <p class="description">Durable pod system with long battery life.</p>
+                            <button class="btn add-to-cart" data-product="Iron Pod Device" data-price="29.99">Add to Order</button>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600423115367-87ea766168db" alt="Herbal Fusion">
+                <h3>Disposable Vapes</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Elf Bar 600">
+                        </div>
+                        <div class="product-info">
+                            <h3>Elf Bar 600 Disposable</h3>
+                            <div class="price">£5.99</div>
+                            <p class="description">600 puffs, various flavors available.</p>
+                            <button class="btn add-to-cart" data-product="Elf Bar 600 Disposable" data-price="5.99">Add to Order</button>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Herbal Fusion</h3>
-                        <div class="price">$179.99</div>
-                        <p class="description">Advanced herbal vaporizer with precise temperature control for dry herbs.</p>
-                        <button class="btn add-to-cart" data-product="Herbal Fusion" data-price="179.99">Add to Order</button>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Lost Mary BM600">
+                        </div>
+                        <div class="product-info">
+                            <h3>Lost Mary BM600</h3>
+                            <div class="price">£5.99</div>
+                            <p class="description">Compact disposable with mesh coil.</p>
+                            <button class="btn add-to-cart" data-product="Lost Mary BM600" data-price="5.99">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Advanced Kits</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="GEEKVAPE Aegis Kit">
+                        </div>
+                        <div class="product-info">
+                            <h3>GEEKVAPE Aegis Kit</h3>
+                            <div class="price">£59.99</div>
+                            <p class="description">Waterproof sub ohm kit with Zeus tank.</p>
+                            <button class="btn add-to-cart" data-product="GEEKVAPE Aegis Kit" data-price="59.99">Add to Order</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Innokin Coolfire Z80">
+                        </div>
+                        <div class="product-info">
+                            <h3>Innokin Coolfire Z80</h3>
+                            <div class="price">£69.99</div>
+                            <p class="description">Advanced box mod with Zenith II tank.</p>
+                            <button class="btn add-to-cart" data-product="Innokin Coolfire Z80" data-price="69.99">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Specialty Devices</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Squonk Mod">
+                        </div>
+                        <div class="product-info">
+                            <h3>Squonk Mod</h3>
+                            <div class="price">£79.99</div>
+                            <p class="description">Bottom-feeding mod for RDA enthusiasts.</p>
+                            <button class="btn add-to-cart" data-product="Squonk Mod" data-price="79.99">Add to Order</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Caffeine Vape">
+                        </div>
+                        <div class="product-info">
+                            <h3>Caffeine Vape</h3>
+                            <div class="price">£14.99</div>
+                            <p class="description">Energy boost without nicotine.</p>
+                            <button class="btn add-to-cart" data-product="Caffeine Vape" data-price="14.99">Add to Order</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -439,7 +551,7 @@
         <div class="container">
             <div class="section-title">
                 <h2 style="color: white;">Place Your Order</h2>
-                <p style="color: #ddd;">Complete the form below to place your order. We'll prepare it for immediate processing.</p>
+                <p style="color: #ddd;">Complete the form below with your UK delivery details.</p>
             </div>
             
             <div class="order-form-container">
@@ -451,7 +563,7 @@
                         </div>
                         <div class="order-total">
                             <span>Total:</span>
-                            <span id="orderTotal">$0.00</span>
+                            <span id="orderTotal">£0.00</span>
                         </div>
                     </div>
                     
@@ -466,22 +578,22 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" required>
+                        <label for="phone">UK Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="e.g. 07123 456789">
                     </div>
                     
                     <div class="form-group">
-                        <label for="address">Shipping Address</label>
-                        <textarea id="address" required></textarea>
+                        <label for="address">UK Shipping Address</label>
+                        <textarea id="address" required placeholder="Include postcode"></textarea>
                     </div>
                     
                     <div class="form-group">
                         <label for="payment">Payment Method</label>
                         <select id="payment" required>
                             <option value="">Select payment method</option>
-                            <option value="cash">Cash on Delivery</option>
                             <option value="card">Credit/Debit Card</option>
-                            <option value="crypto">Cryptocurrency</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bank">Bank Transfer</option>
                         </select>
                     </div>
                     
@@ -490,13 +602,18 @@
                         <textarea id="notes"></textarea>
                     </div>
                     
+                    <div class="form-group">
+                        <input type="checkbox" id="ageVerify" required>
+                        <label for="ageVerify">I confirm I am 18+ years old</label>
+                    </div>
+                    
                     <button type="submit" class="btn" style="width: 100%;">Place Order</button>
                 </form>
                 
                 <div id="orderConfirmation" class="order-confirmation hidden">
                     <i class="fas fa-check-circle"></i>
                     <h2>Order Confirmed!</h2>
-                    <p>Thank you for your purchase. Your order has been received and will be processed shortly.</p>
+                    <p>Thank you for your purchase from VapeHub UK. Your order details are below.</p>
                     
                     <div class="order-details" id="confirmationDetails">
                         <!-- Order details will be inserted here -->
@@ -511,8 +628,8 @@
     <footer id="contact">
         <div class="container footer-content">
             <div class="logo">
-                <i class="fas fa-cloud"></i>
-                <span>Cloud9 Vapes</span>
+                <i class="fas fa-smoking"></i>
+                <span>VapeHub UK</span>
             </div>
             
             <div class="social-links">
@@ -521,9 +638,14 @@
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
             
+            <div class="contact-info">
+                <p>Email: orders@vapehubuk.com</p>
+                <p>Phone: 020 1234 5678</p>
+            </div>
+            
             <p class="copyright">
-                &copy; 2023 Cloud9 Vapes. All rights reserved.<br>
-                For adults 21+ only. Products contain nicotine which is an addictive chemical.
+                &copy; 2023 VapeHub UK. All rights reserved.<br>
+                For adults 18+ only. Products contain nicotine which is an addictive chemical.
             </p>
         </div>
     </footer>
@@ -569,7 +691,7 @@
             
             if (cart.length === 0) {
                 orderItems.innerHTML = '<p>No items selected yet</p>';
-                orderTotal.textContent = '$0.00';
+                orderTotal.textContent = '£0.00';
                 return;
             }
             
@@ -583,13 +705,13 @@
                 itemsHTML += `
                     <div class="order-summary-item">
                         <span>${item.product} (x${item.quantity})</span>
-                        <span>$${itemTotal.toFixed(2)}</span>
+                        <span>£${itemTotal.toFixed(2)}</span>
                     </div>
                 `;
             });
             
             orderItems.innerHTML = itemsHTML;
-            orderTotal.textContent = `$${total.toFixed(2)}`;
+            orderTotal.textContent = `£${total.toFixed(2)}`;
         }
         
         // Handle form submission
@@ -614,7 +736,8 @@
                 notes,
                 items: [...cart],
                 total,
-                date: new Date().toLocaleString()
+                date: new Date().toLocaleString('en-GB'),
+                orderId: 'VH' + Math.floor(Math.random() * 1000000)
             };
             
             // Store in session storage
@@ -635,7 +758,7 @@
             
             // Build confirmation details
             let detailsHTML = `
-                <p><strong>Order #:</strong> ${Math.floor(Math.random() * 1000000)}</p>
+                <p><strong>Order #:</strong> ${order.orderId}</p>
                 <p><strong>Date:</strong> ${order.date}</p>
                 <p><strong>Customer:</strong> ${order.customer.name}</p>
                 <p><strong>Email:</strong> ${order.customer.email}</p>
@@ -646,13 +769,13 @@
             
             order.items.forEach(item => {
                 detailsHTML += `
-                    <p>${item.product} - x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}</p>
+                    <p>${item.product} - x${item.quantity} - £${(item.price * item.quantity).toFixed(2)}</p>
                 `;
             });
             
             detailsHTML += `
                 <p><strong>Payment Method:</strong> ${order.payment}</p>
-                <p><strong>Order Total:</strong> $${order.total.toFixed(2)}</p>
+                <p><strong>Order Total:</strong> £${order.total.toFixed(2)}</p>
             `;
             
             if (order.notes) {
