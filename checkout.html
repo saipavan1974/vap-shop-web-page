@@ -28,6 +28,84 @@
             line-height: 1.6;
         }
         
+        header {
+            background: linear-gradient(135deg, var(--primary), #2a1a4a);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .cart-icon {
+            position: relative;
+            font-size: 1.3rem;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
         .checkout-container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -336,6 +414,40 @@
             margin-top: 1.5rem;
         }
         
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
         @media (max-width: 768px) {
             .form-row {
                 flex-direction: column;
@@ -354,6 +466,29 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-smoking"></i>
+                <span>VapeHub UK</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="#order">Order Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="#order" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
     <div class="checkout-container">
         <div class="checkout-header">
             <h1>Checkout</h1>
@@ -517,38 +652,6 @@
                 <button type="button" id="completeOrder" class="btn">Complete Order</button>
                 <button type="button" id="backToDelivery" class="btn btn-secondary" style="margin-top: 1rem;">Back to Delivery</button>
             </div>
-            
-            <!-- Confirmation Section (initially hidden) -->
-            <div class="checkout-section hidden" id="confirmationSection">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--success); margin-bottom: 1rem;"></i>
-                    <h2 class="section-title">Order Confirmed!</h2>
-                    <p>Thank you for your purchase from VapeHub UK</p>
-                </div>
-                
-                <div class="order-details">
-                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Order #: <span id="orderNumber">VH123456</span></h3>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem;">Delivery Information</h4>
-                        <p id="confirmationName"></p>
-                        <p id="confirmationAddress"></p>
-                        <p id="confirmationContact"></p>
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem;">Order Summary</h4>
-                        <div id="confirmationItems"></div>
-                    </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem;">Payment Method</h4>
-                        <p id="confirmationPayment"></p>
-                    </div>
-                </div>
-                
-                <button type="button" id="continueShopping" class="btn">Continue Shopping</button>
-            </div>
         </div>
         
         <!-- Order Summary Section -->
@@ -558,27 +661,12 @@
                 
                 <div class="order-items" id="orderSummaryItems">
                     <!-- Items will be dynamically added here -->
-                    <div class="order-item">
-                        <div class="order-item-info">
-                            <div class="order-item-name">88vape ClassicPen Advanced</div>
-                            <div class="order-item-qty">Qty: 1</div>
-                        </div>
-                        <div class="order-item-price">£19.99</div>
-                    </div>
-                    
-                    <div class="order-item">
-                        <div class="order-item-info">
-                            <div class="order-item-name">Elf Bar 600 Disposable</div>
-                            <div class="order-item-qty">Qty: 2</div>
-                        </div>
-                        <div class="order-item-price">£11.98</div>
-                    </div>
                 </div>
                 
                 <div class="order-totals">
                     <div class="order-total-row">
                         <span>Subtotal:</span>
-                        <span>£31.97</span>
+                        <span id="orderSubtotal">£0.00</span>
                     </div>
                     <div class="order-total-row">
                         <span>Shipping:</span>
@@ -586,7 +674,7 @@
                     </div>
                     <div class="order-total-row order-total">
                         <span>Total:</span>
-                        <span>£34.96</span>
+                        <span id="orderTotal">£0.00</span>
                     </div>
                 </div>
             </div>
@@ -600,18 +688,39 @@
         </div>
     </div>
 
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="logo">
+                <i class="fas fa-smoking"></i>
+                <span>VapeHub UK</span>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <div class="contact-info">
+                <p>Email: orders@vapehubuk.com</p>
+                <p>Phone: 020 1234 5678</p>
+            </div>
+            
+            <p class="copyright">
+                &copy; 2025 VapeHub UK. All rights reserved.<br>
+                For adults 18+ only. Products contain nicotine which is an addictive chemical.
+            </p>
+        </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Sample cart data (in a real app, this would come from your cart system)
-            const cartItems = [
-                { id: 1, name: '88vape ClassicPen Advanced', price: 19.99, quantity: 1 },
-                { id: 2, name: 'Elf Bar 600 Disposable', price: 5.99, quantity: 2 }
-            ];
-            
+            // Load cart from session storage
+            const cart = JSON.parse(sessionStorage.getItem('vapeCart')) || [];
             const shippingCost = 2.99;
             
             // Calculate totals
-            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             const total = subtotal + shippingCost;
             
             // Render order summary
@@ -619,7 +728,13 @@
                 const orderItemsContainer = document.getElementById('orderSummaryItems');
                 orderItemsContainer.innerHTML = '';
                 
-                cartItems.forEach(item => {
+                if (cart.length === 0) {
+                    // If cart is empty, redirect to home page
+                    window.location.href = 'index.html';
+                    return;
+                }
+                
+                cart.forEach(item => {
                     const itemElement = document.createElement('div');
                     itemElement.className = 'order-item';
                     itemElement.innerHTML = `
@@ -633,8 +748,11 @@
                 });
                 
                 // Update totals
-                document.querySelectorAll('.order-total-row')[0].lastElementChild.textContent = `£${subtotal.toFixed(2)}`;
-                document.querySelectorAll('.order-total-row')[2].lastElementChild.textContent = `£${total.toFixed(2)}`;
+                document.getElementById('orderSubtotal').textContent = `£${subtotal.toFixed(2)}`;
+                document.getElementById('orderTotal').textContent = `£${total.toFixed(2)}`;
+                
+                // Update cart count in header
+                document.querySelector('.cart-count').textContent = cart.reduce((total, item) => total + item.quantity, 0);
             }
             
             // Form validation
@@ -780,55 +898,39 @@
                 if (validatePaymentForm()) {
                     // Process payment (simulated)
                     setTimeout(() => {
-                        // Update checkout steps
-                        document.getElementById('step2').classList.remove('active');
-                        document.getElementById('step2').classList.add('completed');
-                        document.getElementById('step3').classList.add('active');
+                        // Create order object
+                        const order = {
+                            customer: {
+                                firstName: document.getElementById('firstName').value,
+                                lastName: document.getElementById('lastName').value,
+                                email: document.getElementById('email').value,
+                                phone: document.getElementById('phone').value,
+                                address1: document.getElementById('address1').value,
+                                address2: document.getElementById('address2').value,
+                                city: document.getElementById('city').value,
+                                postcode: document.getElementById('postcode').value,
+                                country: document.getElementById('country').value
+                            },
+                            payment: document.querySelector('input[name="paymentMethod"]:checked').value,
+                            notes: document.getElementById('notes').value,
+                            items: [...cart],
+                            subtotal,
+                            shipping: shippingCost,
+                            total,
+                            date: new Date().toLocaleString('en-GB'),
+                            orderId: 'VH' + Math.floor(Math.random() * 1000000)
+                        };
                         
-                        // Switch sections
-                        document.getElementById('paymentSection').classList.add('hidden');
-                        document.getElementById('confirmationSection').classList.remove('hidden');
+                        // Store order in session storage
+                        sessionStorage.setItem('vapeOrder', JSON.stringify(order));
                         
-                        // Set confirmation details
-                        document.getElementById('orderNumber').textContent = 'VH' + Math.floor(Math.random() * 1000000);
-                        document.getElementById('confirmationName').textContent = 
-                            document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value;
-                        document.getElementById('confirmationAddress').textContent = 
-                            document.getElementById('address1').value + (document.getElementById('address2').value ? ', ' + document.getElementById('address2').value : '') + 
-                            ', ' + document.getElementById('city').value + ', ' + document.getElementById('postcode').value;
-                        document.getElementById('confirmationContact').textContent = 
-                            document.getElementById('email').value + ' | ' + document.getElementById('phone').value;
+                        // Clear cart
+                        sessionStorage.removeItem('vapeCart');
                         
-                        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-                        document.getElementById('confirmationPayment').textContent = 
-                            paymentMethod === 'card' ? 'Credit/Debit Card' : 'PayPal';
-                        
-                        // Render confirmation items
-                        const confirmationItems = document.getElementById('confirmationItems');
-                        confirmationItems.innerHTML = '';
-                        
-                        cartItems.forEach(item => {
-                            const itemElement = document.createElement('p');
-                            itemElement.textContent = `${item.name} x ${item.quantity} - £${(item.price * item.quantity).toFixed(2)}`;
-                            confirmationItems.appendChild(itemElement);
-                        });
-                        
-                        const totalElement = document.createElement('p');
-                        totalElement.style.fontWeight = 'bold';
-                        totalElement.style.marginTop = '0.5rem';
-                        totalElement.textContent = `Total: £${total.toFixed(2)}`;
-                        confirmationItems.appendChild(totalElement);
-                        
-                        // Scroll to top
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        // Redirect to confirmation page
+                        window.location.href = 'confirmation.html';
                     }, 1000);
                 }
-            });
-            
-            // Continue shopping button
-            document.getElementById('continueShopping').addEventListener('click', function() {
-                // In a real app, this would redirect to your store
-                alert('Redirecting to store homepage...');
             });
             
             // Initialize the page
