@@ -256,200 +256,6 @@
             font-size: 0.9rem;
         }
         
-        .order-form-section {
-            background: var(--primary);
-            padding: 4rem 0;
-            color: white;
-        }
-        
-        .order-form-container {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            color: var(--dark);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .order-summary {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .order-summary h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .order-summary-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        
-        .order-total {
-            font-weight: 700;
-            border-top: 1px solid #ddd;
-            padding-top: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        /* Payment Page Styles */
-        .payment-page {
-            display: none;
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            color: var(--dark);
-        }
-
-        .payment-page h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .payment-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .payment-method {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .payment-method:hover {
-            border-color: var(--primary);
-        }
-
-        .payment-method.active {
-            border-color: var(--primary);
-            background-color: rgba(74, 44, 130, 0.05);
-        }
-
-        .payment-method input {
-            margin-right: 1rem;
-        }
-
-        .payment-method i {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            color: var(--primary);
-        }
-
-        .payment-details {
-            margin-top: 2rem;
-            display: none;
-        }
-
-        .payment-details.active {
-            display: block;
-        }
-
-        .card-icons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .card-icons img {
-            height: 30px;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
-        .back-to-order {
-            display: block;
-            text-align: center;
-            margin-top: 1rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-to-order:hover {
-            text-decoration: underline;
-        }
-        
-        .order-confirmation {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .order-confirmation i {
-            font-size: 4rem;
-            color: var(--success);
-            margin-bottom: 1rem;
-        }
-        
-        .order-confirmation h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .order-confirmation p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .order-details {
-            text-align: left;
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin: 1.5rem 0;
-        }
-        
         footer {
             background: var(--dark);
             color: white;
@@ -502,10 +308,286 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+        }
+
+        /* Checkout Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .checkout-steps {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 0 1.5rem;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ddd;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            z-index: 2;
+        }
+
+        .step.active .step-number {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .step.completed .step-number {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .step-title {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .step.active .step-title {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .step.completed .step-title {
+            color: var(--success);
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: calc(50% + 20px);
+            width: calc(100% - 40px);
+            height: 2px;
+            background-color: #ddd;
+            z-index: 1;
+        }
+
+        .step.completed:not(:last-child)::after {
+            background-color: var(--success);
+        }
+
+        .checkout-section {
+            margin-bottom: 2rem;
+        }
+
+        .checkout-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .order-summary {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .order-summary h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-total {
+            font-weight: 700;
+            border-top: 1px solid #ddd;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .payment-methods {
+            margin-top: 1.5rem;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-method:hover {
+            border-color: var(--primary);
+        }
+
+        .payment-method.active {
+            border-color: var(--primary);
+            background-color: rgba(74, 44, 130, 0.05);
+        }
+
+        .payment-method input {
+            margin-right: 1rem;
+        }
+
+        .payment-method i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary);
+        }
+
+        .payment-details {
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .card-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .card-icons img {
+            height: 30px;
+        }
+
+        .confirmation {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .confirmation i {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+
+        .confirmation h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .confirmation p {
+            margin-bottom: 1.5rem;
+        }
+
+        .order-details {
+            text-align: left;
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+
+        .age-verification {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+
+        .age-verification input {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
             .form-row {
                 flex-direction: column;
                 gap: 0;
+            }
+            
+            .step {
+                padding: 0 1rem;
+            }
+            
+            .step:not(:last-child)::after {
+                left: calc(50% + 15px);
+                width: calc(100% - 30px);
             }
         }
     </style>
@@ -521,14 +603,8 @@
                 <ul>
                     <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#order">Order Now</a></li>
+                    <li><a href="#" id="viewCartBtn"><i class="fas fa-shopping-cart"></i> Cart (<span class="cart-count">0</span>)</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li>
-                        <a href="#order" class="cart-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count">0</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -560,7 +636,7 @@
                             <h3>88vape ClassicPen Advanced</h3>
                             <div class="price">£19.99</div>
                             <p class="description">Includes CEI Cleanmizer, 650mAh battery, USB charger and 7 juices. Contains nicotine.</p>
-                            <button class="btn add-to-cart" data-product="88vape ClassicPen Advanced" data-price="19.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="88vape ClassicPen Advanced" data-price="19.99">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -572,7 +648,7 @@
                             <h3>Premium Vape Pen</h3>
                             <div class="price">£34.99</div>
                             <p class="description">Premium quality vape pen with USB charger (cartridge not included).</p>
-                            <button class="btn add-to-cart" data-product="Premium Vape Pen" data-price="34.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="Premium Vape Pen" data-price="34.99">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -587,7 +663,7 @@
                             <h3>SMOK Novo Eco Pod Kit</h3>
                             <div class="price">£24.99</div>
                             <p class="description">1000mAh battery, 30W max output, USB-C fast charging, draw-activated with 2mL capacity.</p>
-                            <button class="btn add-to-cart" data-product="SMOK Novo Eco Pod Kit" data-price="24.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="SMOK Novo Eco Pod Kit" data-price="24.99">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -599,7 +675,7 @@
                             <h3>HOPO Iron Pod Device</h3>
                             <div class="price">£29.99</div>
                             <p class="description">Durable pod system with long battery life and premium build quality.</p>
-                            <button class="btn add-to-cart" data-product="HOPO Iron Pod Device" data-price="29.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="HOPO Iron Pod Device" data-price="29.99">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -614,7 +690,7 @@
                             <h3>Elf Bar 600 Disposable</h3>
                             <div class="price">£5.99</div>
                             <p class="description">600 puffs, 20mg/ml nicotine salt, Lemon Lime flavor and other options available.</p>
-                            <button class="btn add-to-cart" data-product="Elf Bar 600 Disposable" data-price="5.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="Elf Bar 600 Disposable" data-price="5.99">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -626,7 +702,7 @@
                             <h3>Lost Mary BM600</h3>
                             <div class="price">£5.99</div>
                             <p class="description">Compact disposable with mesh coil technology.</p>
-                            <button class="btn add-to-cart" data-product="Lost Mary BM600" data-price="5.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="Lost Mary BM600" data-price="5.99">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -641,7 +717,7 @@
                             <h3>GEEKVAPE Aegis Kit</h3>
                             <div class="price">£59.99</div>
                             <p class="description">Rugged sub ohm kit with waterproof design.</p>
-                            <button class="btn add-to-cart" data-product="GEEKVAPE Aegis Kit" data-price="59.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="GEEKVAPE Aegis Kit" data-price="59.99">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -653,7 +729,7 @@
                             <h3>Innokin Coolfire Z80</h3>
                             <div class="price">£69.99</div>
                             <p class="description">Advanced box mod with Zenith II tank.</p>
-                            <button class="btn add-to-cart" data-product="Innokin Coolfire Z80" data-price="69.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="Innokin Coolfire Z80" data-price="69.99">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -668,7 +744,7 @@
                             <h3>Squonk Mod</h3>
                             <div class="price">£79.99</div>
                             <p class="description">Bottom-feeding mod for RDA enthusiasts.</p>
-                            <button class="btn add-to-cart" data-product="Squonk Mod" data-price="79.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="Squonk Mod" data-price="79.99">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -680,145 +756,9 @@
                             <h3>Caffeine Vape</h3>
                             <div class="price">£14.99</div>
                             <p class="description">Energy boost without nicotine.</p>
-                            <button class="btn add-to-cart" data-product="Caffeine Vape" data-price="14.99">Add to Order</button>
+                            <button class="btn add-to-cart" data-product="Caffeine Vape" data-price="14.99">Add to Cart</button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="order-form-section" id="order">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">Place Your Order</h2>
-                <p style="color: #ddd;">Complete the form below with your UK delivery details.</p>
-            </div>
-            
-            <div class="order-form-container">
-                <form id="vapeOrderForm">
-                    <div class="order-summary">
-                        <h3>Your Order</h3>
-                        <div id="orderItems">
-                            <p>No items selected yet</p>
-                        </div>
-                        <div class="order-total">
-                            <span>Total:</span>
-                            <span id="orderTotal">£0.00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">UK Phone Number</label>
-                        <input type="tel" id="phone" required placeholder="e.g. 07123 456789">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="address">UK Shipping Address</label>
-                        <textarea id="address" required placeholder="Include postcode"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="payment">Payment Method</label>
-                        <select id="payment" required>
-                            <option value="">Select payment method</option>
-                            <option value="card">Credit/Debit Card</option>
-                            <option value="paypal">PayPal</option>
-                            <option value="bank">Bank Transfer</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="notes">Special Instructions</label>
-                        <textarea id="notes"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="checkbox" id="ageVerify" required>
-                        <label for="ageVerify">I confirm I am 18+ years old</label>
-                    </div>
-                    
-                    <button type="submit" class="btn" style="width: 100%;">Proceed to Payment</button>
-                </form>
-                
-                <!-- Payment Page -->
-                <div id="paymentPage" class="payment-page hidden">
-                    <h2>Payment Details</h2>
-                    
-                    <div class="payment-methods">
-                        <label class="payment-method active" for="cardPayment">
-                            <input type="radio" id="cardPayment" name="paymentType" value="card" checked>
-                            <i class="far fa-credit-card"></i>
-                            <span>Credit/Debit Card</span>
-                        </label>
-                        
-                        <label class="payment-method" for="paypalPayment">
-                            <input type="radio" id="paypalPayment" name="paymentType" value="paypal">
-                            <i class="fab fa-paypal"></i>
-                            <span>PayPal</span>
-                        </label>
-                    </div>
-                    
-                    <div id="cardDetails" class="payment-details active">
-                        <div class="card-icons">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="cardNumber">Card Number</label>
-                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="cardName">Name on Card</label>
-                            <input type="text" id="cardName" placeholder="John Smith" required>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="expiryDate">Expiry Date</label>
-                                <input type="text" id="expiryDate" placeholder="MM/YY" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" placeholder="123" required>
-                            </div>
-                        </div>
-                        
-                        <button id="processPayment" class="btn" style="width: 100%;">Complete Payment</button>
-                    </div>
-                    
-                    <div id="paypalDetails" class="payment-details">
-                        <p>You will be redirected to PayPal to complete your payment.</p>
-                        <button id="processPaypal" class="btn" style="width: 100%;">Continue to PayPal</button>
-                    </div>
-                    
-                    <a href="#" id="backToOrder" class="back-to-order">← Back to order details</a>
-                </div>
-                
-                <div id="orderConfirmation" class="order-confirmation hidden">
-                    <i class="fas fa-check-circle"></i>
-                    <h2>Order Confirmed!</h2>
-                    <p>Thank you for your purchase from VapeHub UK. Your order details are below.</p>
-                    
-                    <div class="order-details" id="confirmationDetails">
-                        <!-- Order details will be inserted here -->
-                    </div>
-                    
-                    <button id="newOrderBtn" class="btn">Place Another Order</button>
                 </div>
             </div>
         </div>
@@ -848,7 +788,179 @@
             </p>
         </div>
     </footer>
-    
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="checkout-steps">
+                <div class="step active" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Delivery</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Payment</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Confirmation</div>
+                </div>
+            </div>
+            
+            <!-- Delivery Section -->
+            <div id="deliverySection" class="checkout-section">
+                <h2>Delivery Information</h2>
+                
+                <form id="deliveryForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address1">Address Line 1</label>
+                        <input type="text" id="address1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address2">Address Line 2 (Optional)</label>
+                        <input type="text" id="address2">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postcode">Postcode</label>
+                            <input type="text" id="postcode" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" required>
+                            <option value="">Select Country</option>
+                            <option value="UK" selected>United Kingdom</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Delivery Instructions (Optional)</label>
+                        <textarea id="notes"></textarea>
+                    </div>
+                    
+                    <div class="age-verification">
+                        <input type="checkbox" id="ageVerify" required>
+                        <label for="ageVerify">I confirm that I am 18 years of age or older</label>
+                    </div>
+                    
+                    <button type="button" id="continueToPayment" class="btn">Continue to Payment</button>
+                </form>
+            </div>
+            
+            <!-- Payment Section -->
+            <div id="paymentSection" class="checkout-section hidden">
+                <h2>Payment Method</h2>
+                
+                <div class="order-summary">
+                    <h3>Your Order</h3>
+                    <div id="orderSummaryItems">
+                        <!-- Items will be dynamically added here -->
+                    </div>
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span id="orderTotal">£0.00</span>
+                    </div>
+                </div>
+                
+                <div class="payment-methods">
+                    <label class="payment-method active" for="cardPayment">
+                        <input type="radio" id="cardPayment" name="paymentMethod" value="card" checked>
+                        <i class="far fa-credit-card"></i>
+                        <span>Credit/Debit Card</span>
+                    </label>
+                    
+                    <label class="payment-method" for="paypalPayment">
+                        <input type="radio" id="paypalPayment" name="paymentMethod" value="paypal">
+                        <i class="fab fa-paypal"></i>
+                        <span>PayPal</span>
+                    </label>
+                </div>
+                
+                <div id="cardDetails" class="payment-details active">
+                    <div class="card-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardName">Name on Card</label>
+                        <input type="text" id="cardName" placeholder="John Smith" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="paypalDetails" class="payment-details">
+                    <p>You will be redirected to PayPal to complete your payment.</p>
+                </div>
+                
+                <button type="button" id="completeOrder" class="btn">Complete Order</button>
+                <button type="button" id="backToDelivery" class="btn" style="background: #666; margin-top: 1rem;">Back to Delivery</button>
+            </div>
+            
+            <!-- Confirmation Section -->
+            <div id="confirmationSection" class="checkout-section hidden">
+                <div class="confirmation">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Order Confirmed!</h2>
+                    <p>Thank you for your purchase from VapeHub UK</p>
+                </div>
+                
+                <div class="order-details" id="confirmationDetails">
+                    <!-- Order details will be inserted here -->
+                </div>
+                
+                <button type="button" id="continueShopping" class="btn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Cart functionality
         let cart = [];
@@ -857,6 +969,36 @@
         function updateCartCount() {
             const count = cart.reduce((total, item) => total + item.quantity, 0);
             document.querySelector('.cart-count').textContent = count;
+        }
+        
+        // Render order summary
+        function renderOrderSummary() {
+            const orderItemsContainer = document.getElementById('orderSummaryItems');
+            const orderTotalElement = document.getElementById('orderTotal');
+            
+            if (cart.length === 0) {
+                orderItemsContainer.innerHTML = '<p>No items in cart</p>';
+                orderTotalElement.textContent = '£0.00';
+                return;
+            }
+            
+            let itemsHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                itemsHTML += `
+                    <div class="order-item">
+                        <span>${item.product} (x${item.quantity})</span>
+                        <span>£${itemTotal.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            orderItemsContainer.innerHTML = itemsHTML;
+            orderTotalElement.textContent = `£${total.toFixed(2)}`;
         }
         
         // Add to cart buttons
@@ -880,220 +1022,185 @@
                     });
                 }
                 
-                updateOrderSummary();
                 updateCartCount();
                 
-                // Scroll to order form
-                document.getElementById('order').scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Show checkout modal
+                document.getElementById('checkoutModal').style.display = 'block';
+                renderOrderSummary();
             });
         });
         
-        // Update order summary
-        function updateOrderSummary() {
-            const orderItems = document.getElementById('orderItems');
-            const orderTotal = document.getElementById('orderTotal');
-            
-            if (cart.length === 0) {
-                orderItems.innerHTML = '<p>No items selected yet</p>';
-                orderTotal.textContent = '£0.00';
-                return;
-            }
-            
-            let itemsHTML = '';
-            let total = 0;
-            
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                
-                itemsHTML += `
-                    <div class="order-summary-item">
-                        <span>${item.product} (x${item.quantity})</span>
-                        <span>£${itemTotal.toFixed(2)}</span>
-                    </div>
-                `;
-            });
-            
-            orderItems.innerHTML = itemsHTML;
-            orderTotal.textContent = `£${total.toFixed(2)}`;
-        }
-        
-        // Handle form submission - now goes to payment page
-        document.getElementById('vapeOrderForm').addEventListener('submit', function(e) {
+        // View cart button
+        document.getElementById('viewCartBtn').addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Validate basic form
-            if (!document.getElementById('name').value || 
-                !document.getElementById('email').value || 
-                !document.getElementById('phone').value || 
-                !document.getElementById('address').value) {
-                alert('Please fill in all required fields');
-                return;
+            if (cart.length > 0) {
+                document.getElementById('checkoutModal').style.display = 'block';
+                renderOrderSummary();
+            } else {
+                alert('Your cart is empty');
             }
+        });
+        
+        // Close modal
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        });
+        
+        // Continue to payment button
+        document.getElementById('continueToPayment').addEventListener('click', function() {
+            // Simple validation
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'address1', 'city', 'postcode', 'country'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value) {
+                    element.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    element.style.borderColor = '';
+                }
+            });
             
             if (!document.getElementById('ageVerify').checked) {
                 alert('You must confirm you are 18+ years old');
-                return;
+                isValid = false;
             }
             
-            // Hide order form, show payment page
-            document.getElementById('vapeOrderForm').classList.add('hidden');
-            document.getElementById('paymentPage').classList.remove('hidden');
+            if (isValid) {
+                // Update steps
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step1').classList.add('completed');
+                document.getElementById('step2').classList.add('active');
+                
+                // Switch sections
+                document.getElementById('deliverySection').classList.add('hidden');
+                document.getElementById('paymentSection').classList.remove('hidden');
+            }
+        });
+        
+        // Back to delivery button
+        document.getElementById('backToDelivery').addEventListener('click', function() {
+            // Update steps
+            document.getElementById('step1').classList.add('active');
+            document.getElementById('step1').classList.remove('completed');
+            document.getElementById('step2').classList.remove('active');
+            
+            // Switch sections
+            document.getElementById('paymentSection').classList.add('hidden');
+            document.getElementById('deliverySection').classList.remove('hidden');
         });
         
         // Payment method selection
-        document.querySelectorAll('input[name="paymentType"]').forEach(radio => {
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
             radio.addEventListener('change', function() {
-                // Hide all payment details
+                document.querySelectorAll('.payment-method').forEach(method => {
+                    method.classList.remove('active');
+                });
+                
+                this.closest('.payment-method').classList.add('active');
+                
                 document.querySelectorAll('.payment-details').forEach(detail => {
                     detail.classList.remove('active');
                 });
                 
-                // Show selected payment details
-                const selectedMethod = this.value;
-                document.getElementById(selectedMethod + 'Details').classList.add('active');
+                document.getElementById(this.value + 'Details').classList.add('active');
             });
         });
         
-        // Back to order button
-        document.getElementById('backToOrder').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('paymentPage').classList.add('hidden');
-            document.getElementById('vapeOrderForm').classList.remove('hidden');
-        });
-        
-        // Process payment button
-        document.getElementById('processPayment').addEventListener('click', function() {
-            // Validate card details
-            const cardNumber = document.getElementById('cardNumber').value;
-            const cardName = document.getElementById('cardName').value;
-            const expiryDate = document.getElementById('expiryDate').value;
-            const cvv = document.getElementById('cvv').value;
+        // Complete order button
+        document.getElementById('completeOrder').addEventListener('click', function() {
+            // Simple validation for card payment
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            let isValid = true;
             
-            if (!cardNumber || !cardName || !expiryDate || !cvv) {
-                alert('Please fill in all card details');
-                return;
-            }
-            
-            // Simple validation for demo purposes
-            if (!/^\d{16}$/.test(cardNumber.replace(/\s/g, ''))) {
-                alert('Please enter a valid 16-digit card number');
-                return;
-            }
-            
-            if (!/^\d{3,4}$/.test(cvv)) {
-                alert('Please enter a valid CVV (3 or 4 digits)');
-                return;
-            }
-            
-            if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
-                alert('Please enter expiry date in MM/YY format');
-                return;
-            }
-            
-            // Process payment (simulated)
-            processOrder('card');
-        });
-        
-        // Process PayPal button
-        document.getElementById('processPaypal').addEventListener('click', function() {
-            // In a real app, this would redirect to PayPal
-            processOrder('paypal');
-        });
-        
-        // Function to process the order after payment
-        function processOrder(paymentMethod) {
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const address = document.getElementById('address').value;
-            const notes = document.getElementById('notes').value;
-            
-            // Calculate total
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            
-            // Create order object
-            const order = {
-                customer: { name, email, phone, address },
-                payment: paymentMethod,
-                notes,
-                items: [...cart],
-                total,
-                date: new Date().toLocaleString('en-GB'),
-                orderId: 'VH' + Math.floor(Math.random() * 1000000)
-            };
-            
-            // Store in session storage
-            sessionStorage.setItem('vapeOrder', JSON.stringify(order));
-            
-            // Hide payment page, show confirmation
-            document.getElementById('paymentPage').classList.add('hidden');
-            showOrderConfirmation(order);
-            
-            // Clear cart
-            cart = [];
-            updateCartCount();
-        }
-        
-        // Show order confirmation
-        function showOrderConfirmation(order) {
-            // Build confirmation details
-            let detailsHTML = `
-                <p><strong>Order #:</strong> ${order.orderId}</p>
-                <p><strong>Date:</strong> ${order.date}</p>
-                <p><strong>Customer:</strong> ${order.customer.name}</p>
-                <p><strong>Email:</strong> ${order.customer.email}</p>
-                <p><strong>Shipping to:</strong> ${order.customer.address}</p>
+            if (paymentMethod === 'card') {
+                const cardFields = ['cardNumber', 'cardName', 'expiryDate', 'cvv'];
                 
-                <h4>Order Items:</h4>
-            `;
-            
-            order.items.forEach(item => {
-                detailsHTML += `
-                    <p>${item.product} - x${item.quantity} - £${(item.price * item.quantity).toFixed(2)}</p>
-                `;
-            });
-            
-            detailsHTML += `
-                <p><strong>Payment Method:</strong> ${order.payment}</p>
-                <p><strong>Order Total:</strong> £${order.total.toFixed(2)}</p>
-            `;
-            
-            if (order.notes) {
-                detailsHTML += `
-                    <p><strong>Special Instructions:</strong> ${order.notes}</p>
-                `;
+                cardFields.forEach(field => {
+                    const element = document.getElementById(field);
+                    if (!element.value) {
+                        element.style.borderColor = 'red';
+                        isValid = false;
+                    } else {
+                        element.style.borderColor = '';
+                    }
+                });
+                
+                // Additional validation for card number
+                const cardNumber = document.getElementById('cardNumber').value;
+                if (!/^\d{16}$/.test(cardNumber.replace(/\s/g, ''))) {
+                    document.getElementById('cardNumber').style.borderColor = 'red';
+                    isValid = false;
+                }
             }
             
-            document.getElementById('confirmationDetails').innerHTML = detailsHTML;
-            
-            // Show confirmation
-            document.getElementById('orderConfirmation').classList.remove('hidden');
-        }
-        
-        // New order button
-        document.getElementById('newOrderBtn').addEventListener('click', function() {
-            document.getElementById('orderConfirmation').classList.add('hidden');
-            document.getElementById('vapeOrderForm').classList.remove('hidden');
-            document.getElementById('vapeOrderForm').reset();
-            updateOrderSummary();
-        });
-        
-        // Check for existing order on page load
-        window.addEventListener('load', function() {
-            const savedOrder = sessionStorage.getItem('vapeOrder');
-            
-            if (savedOrder) {
-                const order = JSON.parse(savedOrder);
-                document.getElementById('vapeOrderForm').classList.add('hidden');
-                showOrderConfirmation(order);
+            if (isValid) {
+                // Process order (simulated)
+                setTimeout(() => {
+                    // Update steps
+                    document.getElementById('step2').classList.remove('active');
+                    document.getElementById('step2').classList.add('completed');
+                    document.getElementById('step3').classList.add('active');
+                    
+                    // Switch sections
+                    document.getElementById('paymentSection').classList.add('hidden');
+                    document.getElementById('confirmationSection').classList.remove('hidden');
+                    
+                    // Build confirmation details
+                    const confirmationDetails = document.getElementById('confirmationDetails');
+                    let detailsHTML = `
+                        <p><strong>Order #:</strong> VH${Math.floor(Math.random() * 1000000)}</p>
+                        <p><strong>Date:</strong> ${new Date().toLocaleString('en-GB')}</p>
+                        <p><strong>Customer:</strong> ${document.getElementById('firstName').value} ${document.getElementById('lastName').value}</p>
+                        <p><strong>Email:</strong> ${document.getElementById('email').value}</p>
+                        <p><strong>Shipping to:</strong> ${document.getElementById('address1').value}, ${document.getElementById('city').value}, ${document.getElementById('postcode').value}</p>
+                        
+                        <h4>Order Items:</h4>
+                    `;
+                    
+                    cart.forEach(item => {
+                        detailsHTML += `
+                            <p>${item.product} - x${item.quantity} - £${(item.price * item.quantity).toFixed(2)}</p>
+                        `;
+                    });
+                    
+                    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    detailsHTML += `
+                        <p><strong>Payment Method:</strong> ${paymentMethod === 'card' ? 'Credit/Debit Card' : 'PayPal'}</p>
+                        <p><strong>Order Total:</strong> £${total.toFixed(2)}</p>
+                    `;
+                    
+                    confirmationDetails.innerHTML = detailsHTML;
+                    
+                    // Clear cart
+                    cart = [];
+                    updateCartCount();
+                }, 1000);
             }
-            
-            updateCartCount();
         });
+        
+        // Continue shopping button
+        document.getElementById('continueShopping').addEventListener('click', function() {
+            document.getElementById('checkoutModal').style.display = 'none';
+            
+            // Reset checkout flow
+            document.getElementById('step1').classList.add('active');
+            document.getElementById('step1').classList.remove('completed');
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step2').classList.remove('completed');
+            document.getElementById('step3').classList.remove('active');
+            
+            document.getElementById('deliverySection').classList.remove('hidden');
+            document.getElementById('paymentSection').classList.add('hidden');
+            document.getElementById('confirmationSection').classList.add('hidden');
+            
+            // Reset form
+            document.getElementById('deliveryForm').reset();
+        });
+        
+        // Initialize cart count
+        updateCartCount();
     </script>
 </body>
 </html>
